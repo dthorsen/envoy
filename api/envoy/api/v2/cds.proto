@@ -262,8 +262,10 @@ message Cluster {
   // :ref:`STRICT_DNS<envoy_api_enum_value_Cluster.DiscoveryType.STRICT_DNS>`,
   // or :ref:`LOGICAL_DNS<envoy_api_enum_value_Cluster.DiscoveryType.LOGICAL_DNS>`,
   // this value is used as the cluster’s DNS refresh
-  // rate. If this setting is not specified, the value defaults to 5000ms. For
-  // cluster types other than
+  // rate. If this setting is not specified, the value defaults to "5s" (5 seconds).
+  // The value is specified in protobuf's JSON format for the Duration type (number
+  // of seconds followed by the suffix "s"). Some examples include: "300s" and "7.5s".
+  // For cluster types other than
   // :ref:`STRICT_DNS<envoy_api_enum_value_Cluster.DiscoveryType.STRICT_DNS>`
   // and :ref:`LOGICAL_DNS<envoy_api_enum_value_Cluster.DiscoveryType.LOGICAL_DNS>`
   // this setting is ignored.
